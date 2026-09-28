@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200">
+  <style>
+    .draw { stroke-dasharray: var(--l); stroke-dashoffset: var(--l); animation: draw var(--d, 1.2s) ease-out var(--s, 0s) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes pop { 0% { transform: scale(0) rotate(-10deg); } 70% { transform: scale(1.08) rotate(3deg); } 100% { transform: scale(1) rotate(0); } }
+    @keyframes sway { 0%, 100% { transform: rotate(-3deg) translateY(0); } 50% { transform: rotate(2deg) translateY(-6px); } }
+    @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes hl { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    .pop { transform-box: fill-box; transform-origin: center; animation: pop .7s cubic-bezier(.34,1.56,.64,1) var(--s, 0s) both; }
+    .sway { transform-box: fill-box; transform-origin: top center; animation: sway 4.5s ease-in-out var(--s, 0s) infinite; }
+    .fade { animation: fade .6s ease-out var(--s, 0s) both; }
+    .spin { transform-box: fill-box; transform-origin: center; animation: spin 12s linear infinite; }
+    .hl { transform-box: fill-box; transform-origin: left; animation: hl .8s cubic-bezier(.6,.1,.2,1) var(--s, 0s) both; }
+  </style>
+  <defs>
+    <filter id="boil" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="1">
+        <animate attributeName="seed" values="1;4;7" dur="0.5s" calcMode="discrete" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="3.5"/>
+    </filter>
+  </defs>
+  <rect width="900" height="200" fill="#FBF7EE"/><line x1="0" y1="32" x2="900" y2="32" stroke="#D6E4F2" stroke-width="1.2"/><line x1="0" y1="64" x2="900" y2="64" stroke="#D6E4F2" stroke-width="1.2"/><line x1="0" y1="96" x2="900" y2="96" stroke="#D6E4F2" stroke-width="1.2"/><line x1="0" y1="128" x2="900" y2="128" stroke="#D6E4F2" stroke-width="1.2"/><line x1="0" y1="160" x2="900" y2="160" stroke="#D6E4F2" stroke-width="1.2"/><line x1="0" y1="192" x2="900" y2="192" stroke="#D6E4F2" stroke-width="1.2"/><line x1="44" y1="0" x2="44" y2="200" stroke="#F1A6A0" stroke-width="2"/>
+  <g filter="url(#boil)"><path class="draw" style="--l:1100;--d:2.2s" d="M150 96 C 200 40, 230 150, 240 96 S 330 40, 410 96 S 500 150, 580 96 S 680 40, 750 96" fill="none" stroke="#1F2A44" stroke-width="2.5" stroke-dasharray="8 9" stroke-linecap="round"/>
+  <g class="pop" style="--s:0.30s"><path d="M158 96 C 158 67.2, 134.0 47.04, 110 48 S 60.08 72.0, 62 98 S 86.0 144.96, 112 144 S 160.4 115.2, 156 90" fill="#FFE45C" stroke="#1F2A44" stroke-width="2.8" stroke-linecap="round"/></g>
+  <g class="pop" style="--s:0.65s"><path d="M328 96 C 328 67.2, 304.0 47.04, 280 48 S 230.07999999999998 72.0, 232 98 S 256.0 144.96, 282 144 S 330.4 115.2, 326 90" fill="#FFFDF7" stroke="#1F2A44" stroke-width="2.8" stroke-linecap="round"/></g>
+  <g class="pop" style="--s:1.00s"><path d="M498 96 C 498 67.2, 474.0 47.04, 450 48 S 400.08 72.0, 402 98 S 426.0 144.96, 452 144 S 500.4 115.2, 496 90" fill="#9BE7C4" stroke="#1F2A44" stroke-width="2.8" stroke-linecap="round"/></g>
+  <g class="pop" style="--s:1.35s"><path d="M668 96 C 668 67.2, 644.0 47.04, 620 48 S 570.08 72.0, 572 98 S 596.0 144.96, 622 144 S 670.4 115.2, 666 90" fill="#FFFDF7" stroke="#1F2A44" stroke-width="2.8" stroke-linecap="round"/></g>
+  <g class="pop" style="--s:1.70s"><path d="M838 96 C 838 67.2, 814.0 47.04, 790 48 S 740.08 72.0, 742 98 S 766.0 144.96, 792 144 S 840.4 115.2, 836 90" fill="#FFD6E0" stroke="#1F2A44" stroke-width="2.8" stroke-linecap="round"/></g>
+  <path class="draw" style="--l:420;--d:.8s;--s:2.4s" d="M852 96 C 852 58.800000000000004, 821.0 32.76, 790 34 S 725.52 65.0, 728 98 S 759.0 159.24, 792 158 S 855.1 120.8, 850 90" fill="none" stroke="#FF7A59" stroke-width="3" stroke-linecap="round"/></g>
+  <g class="fade" style="--s:0.50s"><text x="110" y="112" text-anchor="middle" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="40" font-weight="700" fill="#1F2A44">1</text><text x="110" y="176" text-anchor="middle" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="20" fill="#1F2A44">requirement</text></g>
+  <g class="fade" style="--s:0.85s"><text x="280" y="112" text-anchor="middle" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="40" font-weight="700" fill="#1F2A44">2</text><text x="280" y="176" text-anchor="middle" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="20" fill="#1F2A44">schema</text></g>
+  <g class="fade" style="--s:1.20s"><text x="450" y="112" text-anchor="middle" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="40" font-weight="700" fill="#1F2A44">3</text><text x="450" y="176" text-anchor="middle" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="20" fill="#1F2A44">logika</text></g>
+  <g class="fade" style="--s:1.55s"><text x="620" y="112" text-anchor="middle" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="40" font-weight="700" fill="#1F2A44">4</text><text x="620" y="176" text-anchor="middle" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="20" fill="#1F2A44">testing</text></g>
+  <g class="fade" style="--s:1.90s"><text x="790" y="112" text-anchor="middle" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="40" font-weight="700" fill="#1F2A44">5</text><text x="790" y="176" text-anchor="middle" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="20" fill="#1F2A44">commit</text></g>
+  <g class="fade" style="--s:2.8s"><text x="700" y="30" font-family="'Segoe Print','Comic Sans MS','Chalkboard SE','Marker Felt','Bradley Hand',cursive" font-size="18" fill="#2F5BD3" transform="rotate(-4 700 30)">commit per milestone!</text></g>
+</svg>
